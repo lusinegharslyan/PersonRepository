@@ -78,6 +78,7 @@ namespace PersonRepository
             public void DeletePerson(int id)
             {
                 using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
+
                 {
                     connection.Open();
                     using (SqlCommand command = new SqlCommand())
@@ -169,9 +170,7 @@ namespace PersonRepository
                 Console.Write("Type Name: ");
                 string name = (Console.ReadLine());
                 Console.Write("Type SurName: ");
-
                 string surName = Console.ReadLine();
-
                 Console.Write("Type Age: ");
 
                 int age = int.Parse(Console.ReadLine());
@@ -183,11 +182,33 @@ namespace PersonRepository
             static void Main(string[] args)
             {
                 int choice;
-                do
+                while (true)
                 {
                     Console.WriteLine("1-AddPerson | 2-DeletePerson | 3-UpdatePerson | 4-GetAll | 0-Exit");
                     Console.Write("Your choice: ");
-                    choice = int.Parse(Console.ReadLine());
+                    string str = Console.ReadLine();
+                  
+                    
+
+                    if (string.IsNullOrWhiteSpace(str))
+                    {
+                        Console.WriteLine("Invalid choice");
+                        continue;
+                    }
+
+                    int num;
+                    if (!int.TryParse(str, out num))
+                    {
+                        Console.WriteLine("Invalid choice");
+                        continue;
+                    };
+                    if (num == 0)
+                    {
+                        Console.WriteLine("End programm");
+                        break;
+                    }
+                    choice = num;
+
                     IPersonRepository personRepository = new PersonRepository();
                     switch (choice)
                     {
@@ -234,16 +255,13 @@ namespace PersonRepository
 
                             };
                             break;
-                        case 0:
-                            Console.WriteLine("End programm");
-                            break;
                         default:
                             Console.WriteLine("Invalid choice");
                             break;
 
                     }
 
-                } while (choice > 0);
+                }
 
 
 

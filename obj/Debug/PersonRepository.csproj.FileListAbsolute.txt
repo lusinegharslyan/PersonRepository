@@ -1,0 +1,7 @@
+C:\Users\lusin\source\repos\PersonRepository\bin\Debug\PersonRepository.exe.config
+C:\Users\lusin\source\repos\PersonRepository\bin\Debug\PersonRepository.exe
+C:\Users\lusin\source\repos\PersonRepository\bin\Debug\PersonRepository.pdb
+C:\Users\lusin\source\repos\PersonRepository\obj\Debug\PersonRepository.csproj.AssemblyReference.cache
+C:\Users\lusin\source\repos\PersonRepository\obj\Debug\PersonRepository.csproj.CoreCompileInputs.cache
+C:\Users\lusin\source\repos\PersonRepository\obj\Debug\PersonRepository.exe
+C:\Users\lusin\source\repos\PersonRepository\obj\Debug\PersonRepository.pdb
